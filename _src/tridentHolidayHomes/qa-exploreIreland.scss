@@ -1,0 +1,201 @@
+@mixin flexWidth($val) {
+	min-width: $val;
+	max-width: $val;
+	flex: 1 1 $val;
+}
+@mixin flexHeight($val) {
+	min-height: $val;
+	max-height: $val;
+	flex: 1 1 $val;
+}
+@mixin cleanFlexWidth() {
+	min-width: inherit;
+	max-width: inherit;
+	flex: 1 1 inherit;
+	width: auto;
+}
+@mixin cleanFlexHeight() {
+	min-height: inherit;
+	max-height: inherit;
+	flex: 1 1 inherit;
+	height: auto;
+}
+
+@mixin transition($property: all, $duration: 250ms, $ease:linear, $delay: 0){
+	transition: $property $duration $ease;
+	transition-delay: $delay;
+}
+
+@mixin device_mobile {body[data-elementor-device-mode="mobile"] {@content;}}
+@mixin device_mobile_extra {body[data-elementor-device-mode="mobile_extra"] {@content;}}
+@mixin device_tablet {body[data-elementor-device-mode="tablet"] {@content;}}
+@mixin device_tablet_extra {body[data-elementor-device-mode="tablet_extra"] {@content;}}
+@mixin device_laptop {body[data-elementor-device-mode="laptop"] {@content;}}
+@mixin device_desktop {body[data-elementor-device-mode="desktop"] {@content;}}
+@mixin device_widescreen {body[data-elementor-device-mode="widescreen"] {@content;}}
+
+@media screen and (max-width: 1366px) and (min-width: 768px) {
+	section.propertyMap .searchfilterbar {
+		min-width: 1080px;
+		width: 100%;
+		div.right-sidebar {
+			border-top-right-radius: 0 !important;
+			border-bottom-left-radius: 0 !important;
+			border-top-left-radius: 0 !important;
+		}
+		form.formFilterClass {
+			> div.elementor-container {
+				width: 100%;
+				> .rowOne {
+					padding-right: 10px;
+					.elementor-col-26 {
+						width: 50%;
+						.sidebar-input {
+							width: 100%;
+							.select2 {
+								max-width: 100%;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1270px) and (min-width: 768px) {
+	section.propertyMap .searchfilterbar {
+		min-width: 1080px;
+		width: 100%;
+		form.formFilterClass {
+			> div.elementor-container {
+				flex-wrap: nowrap !important;
+				.rowOne {
+					> * {
+						margin-bottom: 0 !important;
+					}
+				}
+				.botonR_fondo {
+					margin-bottom: 0 !important;
+					padding-right: 0 !important;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1080px) and (min-width: 768px) {
+	section.propertyMap .searchfilterbar {
+		min-width: 100%;
+		width: 100vw !important;
+	}
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+	.rentalContentFixed	.rentalContent-L1 {
+		margin-top: 200px !important;
+	}
+	section.propertyMap .searchfilterbar {
+		min-width: 100%;
+		width: 100vw !important;
+		top: 0 !important;
+		form#formFilterAccommodation {
+			padding-top: 22px !important;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	section.propertyMap {
+		.searchfilterbar {
+			form#formFilterAccommodation {
+				> .elementor-container {
+					.rowOne {
+						padding-right: 50px !important;
+						> div {
+							//div:not(#occupancy-dropdown),
+							//div:not(#occupancy-dropdown) *,
+							//select {
+							//	background-color: transparent !important;
+							//}
+						}
+					}
+					.botonR_fondo {
+						padding: 10px 15px !important;
+						.btnBox {
+							position: absolute;
+							right: 14px;
+							top: -50px;
+						}
+						.list_mobileFilter {
+							a {
+								background-color: white;
+								color: #4AC0B4;
+								border-radius: 20px !important;
+								padding-left: 10px !important;
+								&.tabOne {
+									margin-right: 5px;
+								}
+								&.active {
+									background-color: #4AC0B4;
+									color: white;
+									padding-left: 30px !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		div.rentalContentFixed {
+			margin-top: 117px !important;
+		}
+	}
+	div.rentalContent-L2 {
+		#prop-view {
+			padding-left: 15px;
+		}
+	}
+}
+@media screen and (max-width: 650px) {
+	section.propertyMap {
+		.searchfilterbar {
+			form#formFilterAccommodation {
+				> .elementor-container {
+					.rowOne {
+						flex-wrap: wrap;
+						padding-right: 60px !important;
+						padding-top: 10px !important;
+						padding-bottom: 10px !important;
+						.elementor-column.elementor-col-26 {
+							width: 100%;
+							margin-right: 0;
+							padding-right: 0;
+							margin-bottom: 6px !important;
+						}
+						.elementor-column.elementor-col-23 {
+							width: calc(50%);
+							margin-bottom: 0;
+							&:last-of-type {
+								padding-right: 0 !important;
+							}
+						}
+					}
+					.botonR_fondo {
+						.btnBox {
+							position: absolute;
+							right: 14px;
+							top: -82px;
+							button {
+								width: 40px;
+								height: 70px;
+								border-radius: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	section.propertyMap div.rentalContentFixed {
+		margin-top: 147px !important;
+	}
+}

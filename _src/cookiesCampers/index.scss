@@ -1,0 +1,225 @@
+$cookiesCampers__secondary: var( --e-global-color-eba3fb5 );
+$cookiesCampers__primary: #07693a;
+$cookiesCampers__text: var(--e-global-color-text );
+$cookiesCampers__gray: #D8D8D8;;
+$cookiesCampers__fontFamily: var(--e-global-typography-35af26c-font-family ), Sans-serif;
+
+@mixin flexWidth($val) {
+	min-width: $val;
+	max-width: $val;
+	flex: 1 1 $val;
+}
+
+.cookiesCampers__campsites__mapSearch {
+	.mapsvg-wrap {
+		.mapsvg-sidebar {
+			padding-right: 30px;
+			.mapsvg-data-form-view .form-group {
+				> label {
+					display: none;
+				}
+				> div {
+					select {
+						outline: none !important;
+						padding: 0 !important;
+						option {
+							outline: none !important;
+							padding: 0;
+							background-color: white;
+							font-family: $cookiesCampers__fontFamily;
+							font-size: 18px;
+							font-weight: 300;	
+							color: $cookiesCampers__text;
+							padding: 10px 0;
+							border-bottom: 1px solid $cookiesCampers__gray;
+							&:hover {
+								color: $cookiesCampers__secondary;
+							}
+							&:checked, &:active, &:focus {
+								color: $cookiesCampers__secondary;
+								box-shadow: none;
+								font-weight: bold;	
+								background-color: white !important;				
+							}
+						}
+					}
+				}
+			}
+		}
+		.mapsvg-map-container {
+			.mapsvg {
+				height: 60vh;
+				min-height: 450px;
+				max-height: 900px;
+			}
+			.mapsvg-marker {
+				opacity: 1 !important;
+				filter: grayscale(0) !important;
+				&:before {
+					content: '';
+					background-image: url('https://cookiescampdev.wpengine.com/wp-content/uploads/2023/06/map_pin.png?2');
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: contain;
+					width: 40px;
+					height: 40px;
+					position: absolute;
+					bottom: 8px;
+    				left: -14px;
+				}
+				&.mapsvg-marker-hover {
+					opacity: 1 !important;
+					filter: grayscale(0) !important;
+					&:before {
+						background-image: url('https://cookiescampdev.wpengine.com/wp-content/uploads/2023/06/map_pin_hover.png');
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: contain;
+					}
+				}
+				img {
+					display: none;
+				}
+			}
+		}
+		.mapsvg-layer-popovers {
+			.mapsvg-popover {
+				max-width: 90% !important;
+				width: 780px !important;
+				background-color: transparent;
+				height: 310px;
+				max-height: 310px;
+				min-height: 310px;
+				background: transparent !important;
+				border: 0 !important;
+				box-shadow: none;
+				overflow: hidden;
+				.mapsvg-controller-view {
+					.mapsvg-controller-view-toolbar {
+						width: 20px;
+						position: absolute;
+						right: 10px;
+						top: 10px;
+					}
+					.mapsvg-controller-view-wrap {
+						top: 0 !important;
+						.mapsvg-controller-view-content {
+							padding: 0;
+						}
+					}					
+				}
+			}
+		}
+	}
+	.mapsvg-wrap-all {
+		flex-wrap: wrap;
+		.mapsvg-header {
+			width: 100%;
+			display: block !important;
+			flex-basis: 100%;
+			padding-right: 0;
+			.mapsvg-data-form-view .form-group {
+				> label {
+					display: none;
+				}
+				> div select {
+					display: block;
+					overflow: scroll !important;
+					height: auto !important;
+					max-height: 60px !important;
+					margin-top: 0;
+					padding-top: 0;
+					option {
+						display: inline-block !important;
+						padding: 6px 14px;
+						font-size: 16px;
+						background-color: white;
+						font-family: $cookiesCampers__fontFamily;
+						color: $cookiesCampers__text;
+						font-weight: 300;	
+						border-radius: 20px;
+						border: 0 !important;
+						&:hover {
+							color: $cookiesCampers__secondary;
+							border: 0 !important;
+						}
+						&:checked, &:active, &:focus {
+							border: 0 !important;
+							color: white;
+							box-shadow: none;
+							font-weight: bold;	
+							background-color: $cookiesCampers__secondary !important;				
+						}
+					}
+				}
+			}
+		}
+		.mapsvg-map-container {
+			width: 100%;
+			display: block !important;
+			flex-basis: 100%;
+			//margin-top: 20px;
+		}
+	}
+}
+
+.c-cardMapSVG {
+	display: flex;
+	flex-direction: row;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+	&__image {
+		@include flexWidth(200px);
+		position: relative;
+		* {
+			display: block;
+			width: 100%;
+			height: 100% !important;
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			padding: 0;
+			margin: 0;
+			border-radius: 0px !important;
+		}
+	}
+	&__content {
+		flex: 1 1 auto;
+		position: relative;
+		display: block;
+		&__main {
+			padding: 25px;
+			h5, h5 a {
+				font-weight: bold;
+				color: $cookiesCampers__primary;
+				font-family: $cookiesCampers__fontFamily;
+				font-size: 22px;
+			}
+			p, p a {
+				font-weight: 300;
+				color: $cookiesCampers__text;
+				font-family: $cookiesCampers__fontFamily;
+				font-size: 16px;
+				margin: 0 !important;
+			}
+			p {
+				a:hover {
+					text-decoration: underline;
+					color: $cookiesCampers__secondary;
+				}
+			}
+		}
+		&__cta {
+			padding: 0 25px 25px 25px;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			a {
+				padding: 15px 25px !important;
+				margin-top: 0 !important;
+			}
+		}
+	}
+}

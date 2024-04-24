@@ -1,0 +1,74 @@
+// regions
+.elementor-element-4baf61c {
+	.owl-thumb {
+		display: block;
+		overflow: hidden;
+		position: relative;
+		padding-top: 75%;
+		img {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+}
+
+// map
+@media screen and (max-width: 768px) {
+	.elementor-element-4053789 {
+		#map_canvas.mapOtherPage {
+			border-radius: 0 !important;
+		}
+	}
+}
+
+// holiday homes
+@media screen and (max-width: 940px) {
+	.elementor-element-4384390 {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		.elementor-element-9b7b775 {
+			padding-left: 5vw;
+			padding-right: 5vw;
+		}
+		#sHomes {
+			.swiper-slide {
+				margin-right: 0 !important;
+				margin-left: 5vw !important;
+				&:last-of-type {
+					margin-right: 5vw !important;
+				}
+				.prop-content {
+					.offers-petfriendly {
+						position: absolute;
+						top: 10px;
+						left: 10px;
+						.petfriendly {
+							display: none;
+						}
+					}
+					.reviewsContentRates {
+						margin-top: 15px;
+					}
+					.favouritesProp {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 430px) {
+	.elementor-element-4384390 {
+		#sHomes {
+			.swiper-slide {
+				max-width: 80vw !important;
+			}
+		}
+	}
+}

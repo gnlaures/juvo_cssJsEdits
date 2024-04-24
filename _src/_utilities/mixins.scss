@@ -1,0 +1,247 @@
+//
+//
+//
+//
+// sizes & positions
+@mixin calcWidthForPositionNegative($negativePosition) {
+	position: relative;
+	left: $negativePosition;
+	width: calc(100% + ($negativePosition * (-2)));
+}
+@mixin flexWidth($val) {
+	min-width: $val;
+	max-width: $val;
+	flex: 1 1 $val;
+}
+@mixin flexHeight($val) {
+	min-height: $val;
+	max-height: $val;
+	flex: 1 1 $val;
+}
+@mixin cleanFlexWidth() {
+	min-width: inherit;
+	max-width: inherit;
+	flex: 1 1 inherit;
+	width: auto;
+}
+@mixin cleanFlexHeight() {
+	min-height: inherit;
+	max-height: inherit;
+	flex: 1 1 inherit;
+	height: auto;
+}
+
+
+//
+//
+//
+//
+// transitions & transforms
+@mixin transition($property: all, $duration: 250ms, $ease:linear, $delay: 0){
+	transition: $property $duration $ease;
+	transition-delay: $delay;
+}
+@mixin transforms($property, $origin: center) {
+	transform: $property;
+	transform-origin: $origin;
+}
+@mixin rotate($rotate, $origin: center) {
+	@include transforms(rotate($rotate), $origin);
+}
+@mixin skew($skew, $origin: center) {
+	@include transforms(skew($skew), $origin);
+}
+@mixin translate($yPercent, $xPercent, $origin: center) {
+	@include transforms(translateY($yPercent) translateX($xPercent), $origin);
+}
+@mixin scale($scale, $origin: center) {
+	@include transforms(scale($scale), $origin);
+}
+
+
+//
+//
+//
+//
+// display
+@mixin showElement() {
+	opacity: 1;
+	visibility: visible;
+}
+@mixin hideElement() {
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+//
+//
+//
+//
+// elementor
+@mixin device_mobile {body[data-elementor-device-mode="mobile"] {@content;}}
+@mixin device_mobile_extra {body[data-elementor-device-mode="mobile_extra"] {@content;}}
+@mixin device_tablet {body[data-elementor-device-mode="tablet"] {@content;}}
+@mixin device_tablet_extra {body[data-elementor-device-mode="tablet_extra"] {@content;}}
+@mixin device_laptop {body[data-elementor-device-mode="laptop"] {@content;}}
+@mixin device_desktop {body[data-elementor-device-mode="desktop"] {@content;}}
+@mixin device_widescreen {body[data-elementor-device-mode="widescreen"] {@content;}}
+
+
+//
+//
+//
+//
+// class
+// display
+// .u-showElement {@include showElement;}
+// .u-hideElement {@include hideElement;}
+// .u-hideOpacity {opacity: 0;}
+// .u-showOpacity {opacity: 1;}
+// .u-dnone, .d-none, .dnone {display: none !important;}
+// .u-dblock, .d-block, .dblock {display: block !important;}
+// .u-dflex, .d-flex, .dflex {display: flex !important;}
+
+// overflow control
+// .u-overflowBlocked {overflow: hidden !important;}
+// .u-overflowBlocked_y {overflow-y: hidden !important;}
+// .u-overflowBlocked_x {overflow-x: hidden !important;}
+
+
+// flex
+// .u-wrap {flex-wrap: wrap !important;}
+// .u-nowrap {flex-wrap: nowrap !important;}
+// .u-wrapRev {flex-wrap: wrap-reverse !important;}
+// .u-jcfe {justify-content: flex-end !important;}
+// .u-jcfs {justify-content: flex-start !important;}
+// .u-jcsb {justify-content: space-between !important;}
+// .u-jcsa {justify-content: space-around !important;}
+// .u-jcc {justify-content: center !important;}
+// .u-aic {align-items: center !important;}
+// .u-aifs {align-items: flex-start !important;}
+// .u-aife {align-items: flex-end !important;}
+// .u-fdr {flex-direction: row !important;}
+// .u-fdc {flex-direction: column !important;}
+
+// default widths - used majority in float blocks
+ .u-fw100 {@include flexWidth(100%)}
+ .u-fw80 {@include flexWidth(80%)}
+ .u-fw75 {@include flexWidth(75%)}
+ .u-fw70 {@include flexWidth(70%)}
+ .u-fw66 {@include flexWidth(66.6%)}
+ .u-fw65 {@include flexWidth(65%)}
+ .u-fw60 {@include flexWidth(60%)}
+ .u-fw55 {@include flexWidth(55%)}
+ .u-fw50 {@include flexWidth(50%)}
+ .u-fw45 {@include flexWidth(45%)}
+ .u-fw40 {@include flexWidth(40%)}
+ .u-fw35 {@include flexWidth(35%)}
+ .u-fw33 {@include flexWidth(33.3%)}
+ .u-fw30 {@include flexWidth(30%)}
+ .u-fw25 {@include flexWidth(25%)}
+ .u-fw20 {@include flexWidth(20%)}
+ .u-fw15 {@include flexWidth(15%)}
+ .u-fw10 {@include flexWidth(10%)}
+ .u-fw16 {@include flexWidth(16.6%)}
+ .u-fw14 {@include flexWidth(14.28%)}
+ .u-fw12 {@include flexWidth(14.5%)}
+ .u-fw11 {@include flexWidth(11.11%)}
+ .u-fw10 {@include flexWidth(10%)}
+ .u-fw9 {@include flexWidth(9.09%)}
+ .u-fw8 {@include flexWidth(15%)}
+
+
+
+// margins, paddings, borders
+// .u-noMargin {margin: 0 !important;}
+// .u-noMarginLeft {margin-left: 0 !important;}
+// .u-noMarginRight {margin-right: 0 !important;}
+// .u-noMarginTop {margin-top: 0 !important;}
+// .u-noMarginBottom {margin-bottom: 0 !important;}
+// .u-noBorder {border: 0 !important;}
+// .u-noBorderLeft {border-left: 0 !important;}
+// .u-noBorderRight {border-right: 0 !important;}
+// .u-noBorderTop {border-top: 0 !important;}
+// .u-noBorderBottom {border-bottom: 0 !important;}
+// .u-noPadding {padding: 0 !important;}
+// .u-noPaddingLeft {padding-left: 0 !important;}
+// .u-noPaddingRight {padding-right: 0 !important;}
+// .u-noPaddingTop {padding-top: 0 !important;}
+// .u-noPaddingBottom {padding-bottom: 0 !important;}
+// .u-pad2 {padding: 2px;}
+// .u-pad4 {padding: 4px;}
+// .u-pad5 {padding: 5px;}
+// .u-pad6 {padding: 6px;}
+// .u-pad7 {padding: 7px;}
+// .u-pad8 {padding: 8px;}
+// .u-pad10 {padding: 10px;}
+// .u-pad12 {padding: 12px;}
+// .u-pad15 {padding: 15px;}
+// .u-pad20 {padding: 20px;}
+// .u-pad25 {padding: 25px;}
+// .u-pad30 {padding: 30px;}
+// .u-pad35 {padding: 35px;}
+// .u-pad40 {padding: 40px;}
+// .u-pad45 {padding: 45px;}
+// .u-pad50 {padding: 50px;}
+// .u-calcPositionNegative2 {@include calcWidthForPositionNegative(-2px);}
+// .u-calcPositionNegative4 {@include calcWidthForPositionNegative(-4px);}
+// .u-calcPositionNegative5 {@include calcWidthForPositionNegative(-5px);}
+// .u-calcPositionNegative6 {@include calcWidthForPositionNegative(-6px);}
+// .u-calcPositionNegative7 {@include calcWidthForPositionNegative(-7px);}
+// .u-calcPositionNegative8 {@include calcWidthForPositionNegative(-8px);}
+// .u-calcPositionNegative10 {@include calcWidthForPositionNegative(-10px);}
+// .u-calcPositionNegative12 {@include calcWidthForPositionNegative(-12px);}
+// .u-calcPositionNegative15 {@include calcWidthForPositionNegative(-15px);}
+// .u-calcPositionNegative20 {@include calcWidthForPositionNegative(-20px);}
+// .u-calcPositionNegative25 {@include calcWidthForPositionNegative(-25px);}
+// .u-calcPositionNegative30 {@include calcWidthForPositionNegative(-30px);}
+// .u-calcPositionNegative35 {@include calcWidthForPositionNegative(-35px);}
+// .u-calcPositionNegative40 {@include calcWidthForPositionNegative(-40px);}
+// .u-calcPositionNegative45 {@include calcWidthForPositionNegative(-45px);}
+// .u-calcPositionNegative50 {@include calcWidthForPositionNegative(-50px);}
+
+
+// positions
+// .u-pos-a {position: absolute;}
+// .u-pos-r {position: relative;}
+// .u-pos-s {position: sticky;}
+// .u-pos-f {position: fixed;}
+
+
+// block pointer events
+// .u-noPointerEvents {
+// 	pointer-events: none;
+// }
+
+// aspect ratio elements
+ .u-aspectRatio {
+ 	display: block;
+ 	overflow: hidden;
+ 	position: relative;
+ 	> * {
+ 		display: block;
+ 		position: absolute;
+ 		left: 0;
+ 		top: 0;
+ 		height: 100%;
+ 		width: 100%;
+ 		object-fit: cover;
+ 		object-position: center;
+ 	}
+ 	&.--ratio-16-9 {
+ 		padding-top: 56.25%
+ 	}
+ 	&.--ratio-4-3 {
+ 		padding-top: 75%;
+ 	}
+ 	&.--ratio-3-2 {
+ 		padding-top: 66.66%;
+ 	}
+ 	&.--ratio-1-1 {
+ 		padding-top: 100%;
+ 	}
+ 	&.--ratio-8-5 {
+ 		padding-top: 62.5%;
+ 	}
+ }

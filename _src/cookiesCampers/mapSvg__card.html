@@ -1,0 +1,20 @@
+<div class="c-cardMapSVG">
+    <div class="c-cardMapSVG__image">
+        {{#each images}}
+            <a href="{{link}}" target="_blank"><img src="{{Large}}"></a>
+        {{/each}}
+    </div>
+    <div class="c-cardMapSVG__content">
+        <div class="c-cardMapSVG__content__main">
+            <a href="{{link}}" target="_blank"><h5>{{title}}</h5></a>
+            <p>{{{description}}}</p>
+        </div>
+        <div class="c-cardMapSVG__content__cta">
+            <a href="{{link}}" class="elementor-button-link elementor-button button-learn elementor-size-sm" role="button">
+                <span class="elementor-button-content-wrapper">
+                    <span class="elementor-button-text">Learn More</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>

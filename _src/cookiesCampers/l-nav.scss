@@ -1,0 +1,66 @@
+body[data-elementor-device-mode="mobile"] .cookiesCampers__nav__menu .jkit-menu-wrapper .jkit-nav-identity-panel .jkit-close-menu:after {
+	left: 70px !important;
+}
+
+.cookiesCampers__nav__menu {
+	.elementor-widget-image,
+	.c-btn--cta,
+	.jkit-hamburger-menu,
+	.jki-menu1-light {
+		transition: all 400ms linear;
+	}
+}
+aside.country-selector {
+	transition: all 400ms linear;
+}
+
+body.js-nav-active {
+	.cookiesCampers__nav__menu {
+
+		.elementor-widget-image {
+			opacity: 0;
+			pointer-events: none;
+		}
+		.c-btn--cta {
+			opacity: 0;
+			pointer-events: none;
+		}
+		.jki-menu1-light {
+			opacity: 0;
+			pointer-events: none;
+		}
+		.jkit-hamburger-menu {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		.jkit-menu-wrapper {
+			top: 0 !important;
+		}
+		.jkit-close-menu {
+			top: -48px !important;
+			right: -20px !important;
+		}
+		.jkit-nav-identity-panel {
+			margin-bottom: 78px !important;
+			.jkit-nav-site-title {
+				img {
+					max-width: 50px !important;
+				}
+			}
+		}
+	}
+	aside.country-selector {
+		right: inherit !important;
+		left: 30px !important;
+		top: 185px !important;
+	}
+}
+@media screen and (max-width: 540px) {
+	.js-nav-active {
+		aside.country-selector {
+			top: 35px !important;
+			border-radius: 10px !important;
+		}
+	}
+}

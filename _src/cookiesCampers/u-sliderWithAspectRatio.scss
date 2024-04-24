@@ -1,0 +1,32 @@
+.u-sliderWithAspectRatio {
+	.swiper-slide-inner {
+		display: block;
+		overflow: hidden;
+		position: relative;
+		> * {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	&.--16-9 .swiper-slide-inner {
+		padding-top: 56.25%
+	}
+	&.--4-3 .swiper-slide-inner {
+		padding-top: 75%;
+	}
+	&.--3-2 .swiper-slide-inner {
+		padding-top: 66.66%;
+	}
+	&.--1-1 .swiper-slide-inner {
+		padding-top: 100%;
+	}
+	&.--8-5 .swiper-slide-inner {
+		padding-top: 62.5%;
+	}
+}

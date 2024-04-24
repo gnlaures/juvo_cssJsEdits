@@ -1,0 +1,36 @@
+.occupancy__confirm {
+	display: none;
+}
+@media screen and (max-width: 768px) {
+	.occupancy__confirm {
+		display: block;
+		width: 100%;
+		border-top: 1px solid #ddd;
+		padding-top: 15px;
+		margin-top: 15px;
+		span {
+			display: block;
+			width: 100%;
+			height: 40px;
+			line-height: 36px;
+			background: transparent;
+			border: 2px solid #4AC0B4;
+			border-radius: 30px;
+			transition: all 400ms linear;
+			color: #4AC0B4;
+			font-size: 16px;
+			text-align: center;
+			font-weight: 600;
+			cursor: pointer;
+			&:hover {
+				background: #4AC0B4;
+				color: white;
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.map_filter .elementor-shortcode .searchfilterbar {
+		width: 100% !important;
+	}
+}

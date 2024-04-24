@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".jkit-hamburger-menu").forEach(function(e){e.addEventListener("click",function(){document.body.classList.add("js-nav-active")})}),document.querySelectorAll(".jkit-close-menu").forEach(function(e){e.addEventListener("click",function(){document.body.classList.remove("js-nav-active")})})});
